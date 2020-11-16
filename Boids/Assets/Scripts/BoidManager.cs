@@ -42,6 +42,7 @@ public class BoidManager : MonoBehaviour
 
             //change position
             boid.velocity = boid.velocity + v1 + v2 + v3;
+            boid.velocity = boid.velocity.normalized;
             boid.boidBody.transform.position = boid.boidBody.transform.position + boid.velocity;
         }
     }

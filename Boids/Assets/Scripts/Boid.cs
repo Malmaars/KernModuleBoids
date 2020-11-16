@@ -16,7 +16,7 @@ public class Boid
         Vector3 perceivedCentre = Vector3.zero;
         foreach (Boid boid in allTheBoids)
         {
-            if(boid != this)
+            if(boid != this && Vector3.Magnitude(boid.boidBody.transform.position - boidBody.transform.position) < 600)
             {
                 perceivedCentre = perceivedCentre + boid.boidBody.transform.position;
             }
@@ -49,7 +49,7 @@ public class Boid
         Vector3 perceivedVelocity = Vector3.zero;
         foreach (Boid boid in allTheBoids)
         {
-            if (boid != this)
+            if (boid != this && Vector3.Magnitude(boid.boidBody.transform.position - boidBody.transform.position) < 600)
             {
                 perceivedVelocity = perceivedVelocity + boid.velocity;
             }
